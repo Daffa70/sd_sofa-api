@@ -2,7 +2,6 @@
 
 include 'connect.php';
 
-$status = $_GET['status'];
 $kelas = $_GET['kelas'];
 
 if(isset($_GET['bulan'])){
@@ -15,9 +14,13 @@ if(isset($_GET['bulan'])){
     }
 }
 
+if(isset($_GET['status'])){
+    $status = $_GET['status'];
+}
 
 
-$sql = "SELECT * FROM spp WHERE status_pembayaran = '$status' AND kelas = '$kelas'";
+
+$sql = "SELECT * FROM spp WHERE kelas = '$kelas'";
 
 if(isset($bulan)){
     if($sql_bulan === true){
@@ -27,6 +30,10 @@ if(isset($bulan)){
         $sql .= " AND untuk_bulan = MONTH(NOW())";
     }
     
+}
+
+if(isset($_GET['status'])){
+    $sql .= "AND status_pembayaran = '$status'";
 }
 
 
