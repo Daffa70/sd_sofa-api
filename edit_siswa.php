@@ -31,7 +31,7 @@ $result = array();
 
 if ($conn->query($sql) === TRUE) {
 	$result['status'] = 0;
-	$result['message'] = "Tambah sUK sukses";
+	$result['message'] = "Tambah Sukses";
 }
 else {
 	$result['status'] = 1;

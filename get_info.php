@@ -25,6 +25,7 @@ if ($query) {
 		$info['subjek'] = $row['subjek'];
 		$info['isi'] = $row['isi'];
 		$info['tanggal'] = $row['tanggal'];
+		$info['foto'] = $row['foto'];
 
 		array_push($list, $info);
 	}

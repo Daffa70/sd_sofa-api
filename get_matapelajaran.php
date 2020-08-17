@@ -18,7 +18,9 @@ if ($query) {
         $mapel['mata_pelajaran'] = $row['mata_pelajaran'];
         $mapel['guru'] = $row['guru'];
         $mapel['jam'] = $row['jam'];
-        $mapel['jam_waktu'] = $row['jam_waktu'];
+		$mapel['jam_waktu'] = $row['jam_waktu'];
+		$mapel['hari'] = $row['hari'];
+		$mapel['kelas'] = $row['kelas'];
 
 
 		array_push($list, $mapel);
