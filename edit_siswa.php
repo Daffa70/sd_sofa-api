@@ -11,7 +11,7 @@ $nohp = $_POST['nohp'];
 $tahunmasuk = $_POST['tahunmasuk'];
 $namawali = $_POST['namawali'];
 $nohpwali = $_POST['nohpwali'];
-$tanggal = $_POST['tanggal'];
+$tanggal1 = $_POST['tanggal'];
 $foto =  $_POST['foto'];
 
 $namaimage =  rand(1, 10000);
@@ -24,7 +24,7 @@ $targer_dir = "upload/foto_siswa/".$nama_foto.".jpeg";
 
 file_put_contents($targer_dir, base64_decode($foto));
 
-$sql = "UPDATE siswa SET nisn = '$nisn', nama = '$nama', alamat = '$alamat' , nohp = '$nohp' , nohporangtua = '$nohpwali', tanggal_lahir = '$tanggal', 
+$sql = "UPDATE siswa SET nisn = '$nisn', nama = '$nama', alamat = '$alamat' , nohp = '$nohp' , nohporangtua = '$nohpwali', tanggal_lahir = '$tanggal1', 
         tahun_masuk = '$tahunmasuk', wali_murid = '$namawali',  kota_lahir = '$kotalhir', foto = '$nama_db' , kelas = '$kelas' WHERE id = '$id'";
 
 $result = array();

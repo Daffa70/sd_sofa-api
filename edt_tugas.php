@@ -1,6 +1,7 @@
 <?php
 include "connect.php";
 
+$id = $_POST['id'];
 $mata_pelajaran = $_POST['mata_pelajaran'];
 $nama_tugas = $_POST['nama_tugas'];
 $tugas = $_POST['tugas'];
@@ -20,7 +21,8 @@ $targer_dir = "upload/foto_siswa/".$nama_foto.".jpeg";
 
 file_put_contents($targer_dir, base64_decode($foto));
 
-$sql = "INSERT INTO tugas VALUES ('', '$nama_tugas', '$tugas','$mata_pelajaran', '$guru' ,'$kelas' , NOW() , '$tanggal1', '$nama_db')";
+$sql = "UPDATE tugas SET ( nama_tugas = '$nama_tugas', tugas = '$tugas', mata_pelajaran = '$mata_pelajaran' , guru = '$guru' ,kelas = '$kelas' , NOW() , deadline = '$tanggal1', foto = '$nama_db'
+        WHERE id = '$id'";
 
 $result = array();
 
