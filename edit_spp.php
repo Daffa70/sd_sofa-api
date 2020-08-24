@@ -7,7 +7,7 @@ $foto = $_POST['foto'];
 $namaimage =  rand(1, 10000);
 $tanggal = date("Y-m-d");
 
-$nama_foto = "image-".$id.$tanggal;
+$nama_foto = "image-".$id."-".$tanggal;
 $nama_db = "image-".$id."-".$tanggal.".jpeg";
  
 $targer_dir = "upload/foto_bukti_spp/".$nama_foto.".jpeg";

@@ -13,7 +13,7 @@ $tanggal = date("Y-m-d");
 $nama_foto = "image-".$judul."-".$tanggal;
 $nama_db = "image-".$judul."-"."-".$tanggal.".jpeg";
  
-$targer_dir = "upload/foto_siswa/".$nama_foto.".jpeg";
+$targer_dir = "upload/foto_info/".$nama_foto.".jpeg";
 
 file_put_contents($targer_dir, base64_decode($foto));
 

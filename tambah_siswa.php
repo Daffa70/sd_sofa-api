@@ -12,6 +12,7 @@ $namawali = $_POST['namawali'];
 $nohpwali = $_POST['nohpwali'];
 $tanggal1 = $_POST['tanggal'];
 $foto =  $_POST['foto'];
+$email = $_POST['email'];
 
 $namaimage =  rand(1, 10000);
 $tanggal = date("Y-m-d");
@@ -23,7 +24,7 @@ $targer_dir = "upload/foto_siswa/".$nama_foto.".jpeg";
 
 file_put_contents($targer_dir, base64_decode($foto));
 
-$sql = "INSERT INTO siswa VALUES ('', '$nisn', '$nama', '$alamat' ,'$nohp' , '$nohpwali', '$tanggal1', '$tahunmasuk', '$namawali', '$kotalhir', '$nama_db' ,'$kelas')";
+$sql = "INSERT INTO siswa VALUES ('', '$nisn', '$nama', '$alamat' ,'$nohp' , '$nohpwali', '$tanggal1', '$tahunmasuk', '$namawali', '$kotalhir', '$nama_db' ,'$kelas', '$email')";
 
 $result = array();
 

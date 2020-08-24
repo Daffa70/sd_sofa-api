@@ -2,15 +2,6 @@
 
 include 'connect.php';
 
-if(isset($_GET["id_penulis"]))
-	$id_penulis = $_GET["id_penulis"];
-if(isset($_GET["isi"]))
-	$isi = $_GET["isi"];
-if(isset($_GET["tgl_awal"]))
-	$tgl_awal = $_GET["tgl_awal"];
-if (isset($_GET["tgl_akhir"]))
-	$tgl_akhir = $_GET["tgl_akhir"];
-
 $sql = "SELECT * FROM kelas";
 
 
@@ -23,6 +14,7 @@ if ($query) {
 		$info['id'] = $row['id'];
 		$info['kelas'] = $row['kelas'];
 		$info['wali_kelas'] = $row['wali_kelas'];
+		$info['foto'] = $row['foto'];
 
 		array_push($list, $info);
 	}

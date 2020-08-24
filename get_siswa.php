@@ -26,6 +26,7 @@ if ($query) {
         $siswa['kelas'] = $row['kelas'];
 		$siswa['foto'] = $row['foto'];
 		$siswa['kota_lahir'] = $row['kota_lahir'];
+		$siswa['email'] = $row['email'];
 		array_push($list, $siswa);
 	}
 	$result['status'] = 0;

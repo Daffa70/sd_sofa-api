@@ -23,6 +23,7 @@
             $murid['wali_murid'] = $row['wali_murid'];
             $murid['kelas'] = $row['kelas'];
             $murid['foto'] = $row['foto'];
+            $murid['email'] = $row['email'];
 
 
             array_push($list, $murid);
@@ -44,6 +45,8 @@
             $pegawai['nohp'] = $row['nohp'];
             $pegawai['jabatan'] = $row['jabatan'];
             $pegawai['mata_pelajaran'] = $row['mata_pelajaran'];
+            $pegawai['foto'] = $row['foto'];
+            $pegawai['email'] = $row['email'];
 
             array_push($list, $pegawai);
         }
