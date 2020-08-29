@@ -8,15 +8,26 @@ $isi = $_POST['isi'];
 $foto = $_POST['foto'];
 
 
-$namaimage =  rand(1, 10000);
-$tanggal = date("Y-m-d");
+$sql1 = "SELECT * FROM informasi WHERE id = '$id' ";
+$query = $conn->query($sql1);
+$row = $query->fetch_assoc();
 
-$nama_foto = "image-".$judul."-".$tanggal;
-$nama_db = "image-".$judul."-"."-".$tanggal.".jpeg";
- 
-$targer_dir = "upload/foto_siswa/".$nama_foto.".jpeg";
+if($foto === $row['foto']){
+	$nama_db = $row['foto'];
+}
+else{
+	$namaimage =  rand(1, 10000);
+	$tanggal = date("Y-m-d");
 
-file_put_contents($targer_dir, base64_decode($foto));
+	$nama_foto = "image-".$judul."-".$rand;
+	$nama_db = "image-".$judul."-".$rand.".jpeg";
+	
+	$targer_dir = "upload/foto_info/".$nama_foto.".jpeg";
+
+	file_put_contents($targer_dir, base64_decode($foto));
+}
+
+
 
 $sql = "UPDATE informasi SET judul = '$judul', subjek = '$subjek', isi = '$isi',tanggal = NOW(), foto = '$nama_db' WHERE id = '$id'";
 

@@ -1,23 +1,22 @@
 <?php
 include "connect.php";
 
-$judul = $_POST['judul'];
-$subjek = $_POST['subjek'];
-$isi = $_POST['isi'];
+$kelas = $_POST['kelas'];
+$wali_kelas = $_POST['wali_kelas'];
 $foto = $_POST['foto'];
 
 
 $namaimage =  rand(1, 10000);
 $tanggal = date("Y-m-d");
 
-$nama_foto = "image-".$judul."-".$tanggal;
-$nama_db = "image-".$judul."-".$tanggal.".jpeg";
+$nama_foto = "image-".$kelas."-".$tanggal;
+$nama_db = "image-".$kelas."-".$tanggal.".jpeg";
  
-$targer_dir = "upload/foto_info/".$nama_foto.".jpeg";
+$targer_dir = "upload/icon_kelas/".$nama_foto.".jpeg";
 
 file_put_contents($targer_dir, base64_decode($foto));
 
-$sql = "INSERT INTO informasi VALUES ('', '$judul', '$subjek','$isi', NOW() , '$nama_db')";
+$sql = "INSERT INTO kelas VALUES ('', '$kelas', '$wali_kelas', '$nama_db')";
 
 $result = array();
 

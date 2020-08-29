@@ -17,8 +17,8 @@ $email = $_POST['email'];
 $namaimage =  rand(1, 10000);
 $tanggal = date("Y-m-d");
 
-$nama_foto = "image-".$nisn;
-$nama_db = "image-".$nisn.".jpeg";
+$nama_foto = "image-".$nisn.$tanggal;
+$nama_db = "image-".$nisn.$tanggal.".jpeg";
  
 $targer_dir = "upload/foto_siswa/".$nama_foto.".jpeg";
 

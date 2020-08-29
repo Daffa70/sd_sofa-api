@@ -14,7 +14,7 @@ $namaimage =  rand(1, 10000);
 $tanggal = date("Y-m-d");
 
 $nama_foto = "image-".$tugas."-".$tanggal;
-$nama_db = "image-".$tugas."-"."-".$tanggal.".jpeg";
+$nama_db = "image-".$tugas."-".$tanggal.".jpeg";
  
 $targer_dir = "upload/foto_tugas/".$nama_foto.".jpeg";
 

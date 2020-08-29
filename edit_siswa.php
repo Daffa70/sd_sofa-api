@@ -15,15 +15,26 @@ $tanggal1 = $_POST['tanggal'];
 $foto =  $_POST['foto'];
 $email = $_POST['email'];
 
-$namaimage =  rand(1, 10000);
-$tanggal = date("Y-m-d");
 
-$nama_foto = "image-".$nisn;
-$nama_db = "image-".$nisn.".jpeg";
- 
-$targer_dir = "upload/foto_siswa/".$nama_foto.".jpeg";
 
-file_put_contents($targer_dir, base64_decode($foto));
+$sql1 = "SELECT * FROM siswa WHERE id = '$id' ";
+$query = $conn->query($sql1);
+$row = $query->fetch_assoc();
+
+if($foto === $row['foto']){
+	$nama_db = $row['foto'];
+}
+else{
+	$rand =  rand(1, 10000);
+	$tanggal = date("Y-m-d");
+	
+	$nama_foto = "image-".$nisn.$rand;
+	$nama_db = "image-".$nisn.$rand.".jpeg";
+	 
+	$targer_dir = "upload/foto_siswa/".$nama_foto.".jpeg";
+	
+	file_put_contents($targer_dir, base64_decode($foto));
+}
 
 $sql = "UPDATE siswa SET nisn = '$nisn', nama = '$nama', alamat = '$alamat' , nohp = '$nohp' , nohporangtua = '$nohpwali', tanggal_lahir = '$tanggal1', 
         tahun_masuk = '$tahunmasuk', wali_murid = '$namawali',  kota_lahir = '$kotalhir', foto = '$nama_db' , kelas = '$kelas', email = '$email' WHERE id = '$id'";

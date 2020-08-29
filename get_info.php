@@ -11,7 +11,7 @@ if(isset($_GET["tgl_awal"]))
 if (isset($_GET["tgl_akhir"]))
 	$tgl_akhir = $_GET["tgl_akhir"];
 
-$sql = "SELECT * FROM informasi";
+$sql = "SELECT * FROM informasi ORDER BY id DESC";
 
 
 $query = $conn->query($sql);

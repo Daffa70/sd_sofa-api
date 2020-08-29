@@ -5,7 +5,7 @@ include 'connect.php';
 $kelas = $_GET['kelas'];
 
 
-$sql = "SELECT * FROM tugas WHERE kelas = '$kelas' ";
+$sql = "SELECT * FROM tugas WHERE kelas = '$kelas' ORDER BY id DESC";
 
 
 $query = $conn->query($sql);
