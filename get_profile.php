@@ -32,7 +32,7 @@
         $result['message'] = "Success";
         $result['data'] = $list;
     } 
-    else if($role === 'admin'){
+    else if($role === 'admin' || $role === 'guru' || $role === 'pegawai'){
         $sql = "SELECT * FROM pegawai WHERE id = '$id'";
         $query = $conn->query($sql);
         $result = array();
